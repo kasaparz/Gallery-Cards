@@ -1,0 +1,68 @@
+:root {
+	--background: #3c343d;
+	--background-card: #6b626c;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.lanza_background {
+	background-color: var(--background);
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+
+.lanza_gallery {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lanza_card {
+	position: relative;
+	left: 0px;
+
+	background-color: var(--background-card);
+	border-radius: 8px;
+	transition: 1s ease-in-out;
+	overflow: hidden;
+	box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+
+	width: 30vh;
+	height: 30vh;
+}
+
+.lanza_card:not(:first-child) {
+	margin-left: -50px;
+}
+
+.lanza_card:hover {
+	transform: translateY(-40px);
+
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.lanza_card:hover ~ .lanza_card {
+	left: 60px;
+}
+
+.lanza_card img {
+	/* height: 300px; */
+	height: 100%;
+	object-fit: cover;
+	border-radius: 16px;
+}
+@media (max-width: 340px) {
+	.lanza_card {
+	
+	
+		width: 20vh;
+		height: 20vh;
+	}
+	
+}
